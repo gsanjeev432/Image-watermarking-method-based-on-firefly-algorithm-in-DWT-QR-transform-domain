@@ -1,0 +1,11 @@
+clear all;
+clc;
+alpha=0.3;
+A = imread('lena.jpg');
+A = rgb2gray(A);
+w = imread('lg.jpg');
+w = rgb2gray(w);
+W=double(w);
+A=double(A);
+[W_IM,S,Uw,Vw ] = embedding(A,W,alpha);
+[ EX_WM ] = extraction(A,S,W,W_IM ,alpha,Uw,Vw);
